@@ -11,6 +11,7 @@ function App(){
       const resposta = await fetch(url)
       const dados = await resposta.json()
       setCursos(dados)
+      console.log(cursos)
     } catch(erro){
       console.error("Erro ao carregar os dados:", erro)
     }
