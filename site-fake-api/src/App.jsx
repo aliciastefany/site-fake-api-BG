@@ -21,19 +21,21 @@ function App(){
 
   return(
     <div className="container">
-      <button onClick={carregarCursos}>Lista de Cursos</button>
+      <h1>Lista de Cursos</h1>
 
       {cursos.map((curso)=>{
-        <div className="card" key={curso.id}>
-          <h2>{curso.nome}</h2>
-          <p>Carga Horária: {curso["carga-horaria"]} h</p>
+        return(
+          <div className="card" key={curso.id}>
+            <h2>{curso.nome}</h2>
+            <p>Carga Horária: {curso["carga-horaria"]} h</p>
 
-          <div className="disciplinas">
-            {curso.disciplinas.map((disc, index)=>{
-              <span className="disciplina" key={index}>{disc}</span>
-            })}
+            <div className="disciplinas">
+              {curso.disciplinas.map((disc, index)=>{
+                <span className="disciplina" key={index}>{disc}</span>
+              })}
+            </div>
           </div>
-        </div>
+        )
       })}
 
     </div>
